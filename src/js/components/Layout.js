@@ -5,20 +5,18 @@ import Footer from './Footer';
 export default class Layout extends React.Component {
     constructor(){
         super();
-        // state is for internal value only affect something inside of the component
         this.state = {
-            name: 'alex'
+          title: 'Welcome'
         };
     }
 
     render() {
-        setTimeout(()=>{
-            this.setState({name: 'fancn'});
-        }, 2000);
+        const title = 'hello from Layout';
+
         return (
             <div>
-                <Header/>
-                {this.state.name}
+                <Header title={this.state.title} />
+                <Header title={'other title'} />
                 <Footer/>
             </div>
         );
